@@ -1,0 +1,72 @@
+/* ==========================================
+   WEPAAY - ESTILOS GLOBALES ACTUALIZADOS
+   ========================================== */
+
+:root {
+    --azul-wepaay: #1a73b9;
+    --azul-oscuro: #155a8a;
+}
+
+/* 2. NAVBAR Y LOGOS */
+.logo-nav {
+    max-height: 100px;
+    width: auto;
+}
+
+.navbar-brand {
+    color: var(--azul-wepaay) !important;
+    font-size: 1.5rem;
+}
+
+/* 3. BOTONES Y LINKS */
+.btn-primary, .boton-azul {
+    background-color: var(--azul-wepaay) !important;
+    border-color: var(--azul-wepaay) !important;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: var(--azul-oscuro) !important;
+}
+
+/* 4. CARDS DE PRODUCTOS */
+.img-card-container {
+    min-height: 110px;
+}
+
+.img-producto {
+    max-height: 300px;
+    width: auto;
+}
+
+.card-hover {
+    transition: all 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(26, 115, 185, 0.2) !important;
+}
+
+/* 5. FOOTER PERSONALIZADO (Para que no se vea blanco) */
+.footer-wepaay {
+    background-color: var(--azul-wepaay);
+    color: white;
+    padding: 40px 20px;
+    font-family: sans-serif;
+}
+
+.footer-wepaay a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-wepaay a:hover {
+    opacity: 1;
+}
+
+.border-footer {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 40px;
+}
