@@ -82,5 +82,44 @@ header .nav-logo {
     font-size: 1.8rem;
   }
 }
+.main-footer {
+  background-color: #004481;
+  padding: 60px 0 20px;
+  color: white;
+  margin-top: 50px;
+}
+.main-footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+.main-footer .footer-h {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #4eb5e6;
+}
+.main-footer .footer-nav {
+  list-style: none;
+  padding: 0;
+}
+.main-footer .footer-nav li {
+  margin-bottom: 10px;
+}
+.main-footer .footer-nav li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: 0.3s;
+}
+.main-footer .footer-nav li a:hover {
+  color: white;
+  padding-left: 5px;
+}
+.main-footer .footer-legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
 
 /*# sourceMappingURL=style.css.map */
