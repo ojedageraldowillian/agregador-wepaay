@@ -1,39 +1,29 @@
-@keyframes floatIn {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-img {
-  max-width: 100%;
-  height: auto;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  animation: floatIn 1.2s ease-out;
-}
-img:hover {
-  transform: translateY(-10px) scale(1.03);
-  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
-}
-
-.hero-img-size {
-  max-width: 350px !important;
-  display: block;
-  margin: 0 auto;
+body {
+  color: #333333;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
 }
 
 h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 800;
   color: #004481;
   margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #333333;
   margin-bottom: 2rem;
 }
@@ -41,21 +31,41 @@ h2 {
 .lead {
   color: #666666;
   font-size: 1.25rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: fadeInUp 1.4s ease-out;
+}
+img:hover {
+  transform: translateY(-12px) scale(1.05);
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+}
+
+.hero-img-size {
+  max-width: 500px !important;
+  width: 100%;
+  display: block;
+  margin: 30px auto;
 }
 
 header {
-  border-bottom: 2px solid #eeeeee;
-  padding: 10px 0;
+  border-bottom: 2px solid #f0f0f0;
+  padding: 15px 0;
 }
 header .nav-logo {
-  height: 40px;
+  height: 45px;
   width: auto;
+  animation: none;
 }
 
 .main-footer {
   background-color: #004481;
   color: #ffffff;
-  padding: 60px 0 20px;
+  padding: 60px 0 30px;
   margin-top: 80px;
 }
 .main-footer .footer-h {
@@ -80,19 +90,19 @@ header .nav-logo {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 40px 15px;
+    padding: 50px 20px;
   }
   .hero h1 {
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
   }
   .hero .hero-img-size {
-    max-width: 280px !important;
+    max-width: 380px !important;
   }
   #productos {
     padding: 40px 0;
   }
   #productos h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
 
