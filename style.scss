@@ -1,79 +1,55 @@
-// 1. VARIABLES
-$azul-bbva: #004481;
-$celeste-openpay: #00a9e0;
-$blanco: #ffffff;
+// 1. VARIABLE DIRECTA
+$color-final: #004481; // AZUL BBVA DIRECTO
 
-// 2. MIXINS
-@mixin flex-center {
+// 2. MIXIN DE CENTRADO
+@mixin centrar-todo {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-// 3. ANIMACIÓN
-@keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(50px) scale(0.9); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0) scale(1); 
-    }
+// 3. ANIMACIÓN EVIDENTE
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-// 4. ESTILOS GENERALES
-body {
-    color: $azul-bbva !important; // FUERZA TODO EL TEXTO A AZUL BBVA
+// 4. RESET DE TEXTO (TODO AZUL)
+* {
+    color: $color-final !important;
 }
 
-h1, h2, h3, h4, h5, h6, p, span, a {
-    color: $azul-bbva; // Asegura que títulos y párrafos sean azules
+// 5. EXCEPCIÓN PARA EL FOOTER (FONDO AZUL, LETRA BLANCA)
+footer, .main-footer, .footer-h, .footer-nav a, .social-box a {
+    background-color: $color-final !important;
+    color: #ffffff !important;
 }
 
+// 6. HOVER EN IMÁGENES
 img {
     max-width: 100%;
     height: auto;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    
+    transition: transform 0.4s ease;
     &:hover {
-        transform: scale(1.1); 
-        filter: brightness(1.1);
+        transform: scale(1.1);
     }
 }
 
 .hero {
-    animation: fadeIn 1.5s ease-out;
+    animation: aparecer 1.5s ease-out;
 }
 
-.hero-img-size {
-    max-width: 300px !important;
-    display: block;
-    margin: 0 auto;
-}
-
-// 5. FOOTER (Mantenemos el fondo azul y texto blanco para contraste)
-.main-footer {
-    background-color: $azul-bbva;
-    padding: 40px 0;
-    
-    .footer-h, p, span, a, li {
-        color: $blanco !important; // En el footer necesitamos que sea blanco para que se lea
-    }
-
-    .social-box {
-        @include flex-center; 
-        gap: 20px;
-    }
-}
-
-// 6. RESPONSIVE
+// 7. ARREGLO PARA MÓVIL
 @media (max-width: 768px) {
-    .hero {
-        text-align: center !important;
-        .hero-content {
-            @include flex-center; 
-            flex-direction: column;
-        }
+    .hero, .hero-content {
+        @include centrar-todo;
+        padding: 40px 10px;
+    }
+    
+    .hero-img-size {
+        max-width: 280px !important;
+        margin: 20px auto !important;
     }
 }
