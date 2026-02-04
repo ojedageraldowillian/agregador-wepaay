@@ -116,3 +116,42 @@ header {
         }
     }
 }
+// --- OPTIMIZACIÓN PARA MÓVIL ---
+@media (max-width: 768px) {
+    .hero {
+        text-align: center; // Centra el texto
+        padding: 40px 15px; // Da margen a los costados para que no toque el borde
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center; // Centra el botón y el texto
+        }
+
+        h1 {
+            font-size: 1.8rem !important; // Tamaño más cómodo para celular
+            line-height: 1.2;
+        }
+
+        .lead {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .hero-img-size {
+            max-width: 280px !important; // Tamaño equilibrado para el logo central
+            margin: 30px auto 0 auto !important;
+        }
+    }
+
+    // Centrar sección de productos
+    #productos {
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    }
+}
