@@ -8,3 +8,35 @@ $color-texto: #333333;
 // Fuentes y Medidas
 $fuente-principal: 'Benton Sans', Arial, sans-serif;
 $header-height: 80px; // Esto asegura que todos los headers midan lo mismo
+// Estilos para corregir la proporción
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    height: $header-height; // Usamos la variable de 80px que ya creaste
+
+    .navbar-brand img {
+        max-height: 100%; // Evita que el logo sea gigante
+        width: auto;
+        display: block;
+    }
+}
+
+// Contenedor principal para centrar el contenido
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - #{$header-height});
+    text-align: center;
+}
+
+// Estilo para el logo central (el que se ve gigante en tu captura)
+.hero-logo {
+    max-width: 400px; // Ajusta este valor para que no ocupe toda la pantalla
+    width: 90%;
+    height: auto;
+    margin-bottom: 2rem;
+}
