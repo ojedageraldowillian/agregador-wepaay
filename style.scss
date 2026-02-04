@@ -23,6 +23,14 @@ $blanco: #ffffff;
 }
 
 // 4. ESTILOS GENERALES
+body {
+    color: $azul-bbva !important; // FUERZA TODO EL TEXTO A AZUL BBVA
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a {
+    color: $azul-bbva; // Asegura que títulos y párrafos sean azules
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -35,7 +43,7 @@ img {
 }
 
 .hero {
-    animation: fadeIn 1.5s ease-out; // Mantenemos solo la versión de 1.5s
+    animation: fadeIn 1.5s ease-out;
 }
 
 .hero-img-size {
@@ -44,15 +52,13 @@ img {
     margin: 0 auto;
 }
 
-// 5. FOOTER
+// 5. FOOTER (Mantenemos el fondo azul y texto blanco para contraste)
 .main-footer {
     background-color: $azul-bbva;
-    color: $blanco;
     padding: 40px 0;
     
-    .footer-h {
-        color: $celeste-openpay;
-        font-weight: bold;
+    .footer-h, p, span, a, li {
+        color: $blanco !important; // En el footer necesitamos que sea blanco para que se lea
     }
 
     .social-box {
