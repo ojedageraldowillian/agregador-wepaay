@@ -77,3 +77,42 @@ header {
     font-size: 0.8rem;
     text-align: center;
 }
+// MEJORAS PARA MÓVIL (Pantallas menores a 768px)
+@media (max-width: 767.98px) {
+    .hero {
+        padding: 60px 20px; // Más espacio arriba y abajo
+        text-align: center; // Centramos todo para que se vea ordenado
+        
+        h1 {
+            font-size: 1.8rem; // Achicamos un poco el título
+            margin-bottom: 20px;
+        }
+
+        .hero-img-size {
+            max-width: 250px !important;
+            margin-top: 30px;
+        }
+    }
+
+    // Ajuste para las tarjetas de soluciones
+    #productos {
+        padding: 40px 15px;
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            margin-bottom: 20px; // Espacio entre tarjetas al apilarse
+        }
+    }
+
+    // Footer más legible
+    .main-footer {
+        text-align: center;
+        .footer-grid {
+            gap: 40px;
+        }
+    }
+}
