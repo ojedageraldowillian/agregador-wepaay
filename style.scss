@@ -1,33 +1,31 @@
+// 1. VARIABLES
 $azul-bbva: #004481;
 $celeste-openpay: #00a9e0;
 $blanco: #ffffff;
 
-// 2. REGLA MAESTRA PARA IMÁGENES
+// 2. REGLAS GENERALES
 img {
     max-width: 100%;
     height: auto;
 }
 
-// 3. EL "FRENO" PARA EL LOGO GIGANTE DEL INDEX
-.hero-img-size {
-    max-width: 300px !important; 
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-}
-
-// 4. LOGO DEL MENÚ
 .nav-logo {
     height: 45px;
     width: auto;
 }
 
-// 5. HEADER
 header {
     border-bottom: 3px solid $azul-bbva;
 }
 
-// 6. FORMATO PARA EL FOOTER (Nosotros, Ayuda, Contacto)
+// 3. LOGO CENTRAL (Versión escritorio)
+.hero-img-size {
+    max-width: 300px !important; 
+    display: block;
+    margin: 0 auto;
+}
+
+// 4. FOOTER
 .main-footer {
     background-color: $azul-bbva;
     color: $blanco;
@@ -44,114 +42,49 @@ header {
         font-size: 1.2rem;
         font-weight: bold;
         margin-bottom: 15px;
-        color: $celeste-openpay; // Ahora sí funcionará
+        color: $celeste-openpay;
     }
 
     .footer-nav {
         list-style: none;
         padding: 0;
-        
-        li {
-            margin-bottom: 10px;
-            a {
-                color: $blanco;
-                text-decoration: none;
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
+        li a {
+            color: $blanco;
+            text-decoration: none;
         }
     }
-
-    .social-box a {
-        color: $blanco;
-        margin-right: 15px;
-        text-decoration: none;
-        font-weight: bold;
-    }
 }
 
-.footer-legal {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
-    font-size: 0.8rem;
-    text-align: center;
-}
-// MEJORAS PARA MÓVIL (Pantallas menores a 768px)
-@media (max-width: 767.98px) {
+// 5. --- EL ARREGLO PARA MÓVIL (FUERZA BRUTA) ---
+@media (max-width: 768px) {
     .hero {
-        padding: 60px 20px; // Más espacio arriba y abajo
-        text-align: center; // Centramos todo para que se vea ordenado
-        
+        text-align: center !important; // Centra el texto
+        padding: 50px 20px !important;
+
+        .hero-content {
+            text-align: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; // Centra el botón
+        }
+
         h1 {
-            font-size: 1.8rem; // Achicamos un poco el título
-            margin-bottom: 20px;
+            font-size: 1.8rem !important;
+            text-align: center !important;
         }
 
         .hero-img-size {
             max-width: 250px !important;
-            margin-top: 30px;
+            margin: 40px auto 0 auto !important; // Separa el logo del texto
         }
     }
 
-    // Ajuste para las tarjetas de soluciones
-    #productos {
-        padding: 40px 15px;
-        
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-        }
-
-        .card {
-            margin-bottom: 20px; // Espacio entre tarjetas al apilarse
-        }
-    }
-
-    // Footer más legible
     .main-footer {
-        text-align: center;
+        text-align: center !important;
         .footer-grid {
-            gap: 40px;
-        }
-    }
-}
-// --- OPTIMIZACIÓN PARA MÓVIL ---
-@media (max-width: 768px) {
-    .hero {
-        text-align: center; // Centra el texto
-        padding: 40px 15px; // Da margen a los costados para que no toque el borde
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center; // Centra el botón y el texto
-        }
-
-        h1 {
-            font-size: 1.8rem !important; // Tamaño más cómodo para celular
-            line-height: 1.2;
-        }
-
-        .lead {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-        }
-
-        .hero-img-size {
-            max-width: 280px !important; // Tamaño equilibrado para el logo central
-            margin: 30px auto 0 auto !important;
-        }
-    }
-
-    // Centrar sección de productos
-    #productos {
-        h2 {
-            font-size: 1.6rem;
-            margin-bottom: 30px;
-        }
-        .card {
-            margin-bottom: 20px;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
         }
     }
 }
