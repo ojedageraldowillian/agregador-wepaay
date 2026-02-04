@@ -1,55 +1,84 @@
-// 1. VARIABLES (Identidad BBVA/Openpay)
-$color-primario: #004481;   // Azul BBVA
-$color-celeste: #00a9e0;    // Celeste Openpay
-$color-blanco: #ffffff;
+// VARIABLES CORPORATIVAS
+$azul-bbva: #004481;
+$celeste-openpay: #00a9e0;
+$blanco: #ffffff;
+$gris-fondo: #f8f9fa;
 
-// 2. ESTILOS GENERALES
+// RESET GENERAL Y REGLA ANT-DESPROPORCIÓN
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-// 3. CORRECCIÓN DE IMÁGENES (Esto arregla la desproporción)
 img {
-    max-width: 100%;
+    max-width: 100%; // Esto evita que cualquier imagen rompa el diseño
     height: auto;
 }
 
-// Achicamos el logo del Menú
-.nav-logo {
-    height: 40px; 
-    width: auto;
+// HEADER Y NAVEGACIÓN
+header {
+    border-bottom: 3px solid $azul-bbva;
+    
+    .nav-logo {
+        height: 45px; // Controla el logo del menú
+        width: auto;
+    }
+
+    .text-primary-wepaay {
+        color: $azul-bbva !important;
+    }
+
+    .btn-ingresar {
+        background-color: $azul-bbva;
+        border: none;
+        color: $blanco;
+        &:hover {
+            background-color: $celeste-openpay;
+        }
+    }
 }
 
-// Achicamos el logo gigante del Hero (el de la línea 46)
-.hero-img-size {
-    max-width: 350px !important; // Esto evita que ocupe toda la pantalla
-    height: auto;
+// SECCIÓN HERO (El logo gigante)
+.hero {
+    background-color: $gris-fondo;
+    
+    .hero-img-size {
+        max-width: 350px !important; // Achica el logo del medio
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
 }
 
-// Achicamos las imágenes de los productos (SmartPos, Link, etc)
+// PRODUCTOS (Las tarjetas)
 .img-product {
-    height: 120px;
+    height: 100px; // Tamaño uniforme para los iconos de productos
     width: auto;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
-// 4. HEADER (Colores institucionales)
-header {
-    background-color: $color-blanco;
-    border-bottom: 3px solid $color-primario;
-    
-    .text-primary-wepaay {
-        color: $color-primario !important;
+.card {
+    transition: transform 0.3s;
+    &:hover {
+        transform: translateY(-5px);
+        border-bottom: 2px solid $celeste-openpay !important;
     }
+}
+
+// FOOTER
+.main-footer {
+    background-color: $azul-bbva;
+    color: $blanco;
+    padding: 3rem 0;
     
-    .btn-ingresar {
-        background-color: $color-primario;
-        border: none;
+    a {
+        color: $blanco;
+        text-decoration: none;
         &:hover {
-            background-color: $color-celeste;
+            color: $celeste-openpay;
         }
     }
 }

@@ -9,26 +9,12 @@ img {
   height: auto;
 }
 
-.nav-logo {
-  height: 40px;
-  width: auto;
-}
-
-.hero-img-size {
-  max-width: 350px !important;
-  height: auto;
-}
-
-.img-product {
-  height: 120px;
-  width: auto;
-  object-fit: contain;
-  margin-bottom: 15px;
-}
-
 header {
-  background-color: #ffffff;
   border-bottom: 3px solid #004481;
+}
+header .nav-logo {
+  height: 45px;
+  width: auto;
 }
 header .text-primary-wepaay {
   color: #004481 !important;
@@ -36,9 +22,49 @@ header .text-primary-wepaay {
 header .btn-ingresar {
   background-color: #004481;
   border: none;
+  color: #ffffff;
 }
 header .btn-ingresar:hover {
   background-color: #00a9e0;
+}
+
+.hero {
+  background-color: #f8f9fa;
+}
+.hero .hero-img-size {
+  max-width: 350px !important;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.img-product {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.card {
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  border-bottom: 2px solid #00a9e0 !important;
+}
+
+.main-footer {
+  background-color: #004481;
+  color: #ffffff;
+  padding: 3rem 0;
+}
+.main-footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.main-footer a:hover {
+  color: #00a9e0;
 }
 
 /*# sourceMappingURL=styles.css.map */
