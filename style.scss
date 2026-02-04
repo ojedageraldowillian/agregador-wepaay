@@ -1,115 +1,27 @@
-// VARIABLES CORPORATIVAS
+// VARIABLES
 $azul-bbva: #004481;
-$celeste-openpay: #00a9e0;
-$blanco: #ffffff;
-$gris-fondo: #f8f9fa;
 
-// RESET GENERAL Y REGLA ANT-DESPROPORCIÓN
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+// 1. REGLA MAESTRA PARA IMÁGENES
 img {
-    max-width: 100%; // Esto evita que cualquier imagen rompa el diseño
+    max-width: 100%;
     height: auto;
 }
 
-// HEADER Y NAVEGACIÓN
+// 2. EL "FRENO" PARA EL LOGO GIGANTE DEL INDEX
+.hero-img-size {
+    max-width: 300px !important; // Esto achica la imagen gigante
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+// 3. LOGO DEL MENÚ
+.nav-logo {
+    height: 45px;
+    width: auto;
+}
+
+// 4. HEADER
 header {
     border-bottom: 3px solid $azul-bbva;
-    
-    .nav-logo {
-        height: 45px; // Controla el logo del menú
-        width: auto;
-    }
-
-    .text-primary-wepaay {
-        color: $azul-bbva !important;
-    }
-
-    .btn-ingresar {
-        background-color: $azul-bbva;
-        border: none;
-        color: $blanco;
-        &:hover {
-            background-color: $celeste-openpay;
-        }
-    }
-}
-
-// SECCIÓN HERO (El logo gigante)
-.hero {
-    background-color: $gris-fondo;
-    
-    .hero-img-size {
-        max-width: 350px !important; // Achica el logo del medio
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-}
-
-// PRODUCTOS (Las tarjetas)
-.img-product {
-    height: 100px; // Tamaño uniforme para los iconos de productos
-    width: auto;
-    object-fit: contain;
-    margin-bottom: 1rem;
-}
-
-.card {
-    transition: transform 0.3s;
-    &:hover {
-        transform: translateY(-5px);
-        border-bottom: 2px solid $celeste-openpay !important;
-    }
-}
-
-// FOOTER
-.main-footer {
-    background-color: $azul-bbva;
-    color: $blanco;
-    padding: 3rem 0;
-    
-    a {
-        color: $blanco;
-        text-decoration: none;
-        &:hover {
-            color: $celeste-openpay;
-        }
-    }
-}
-/* Regla general para que nada se desborde */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Control del logo central del index */
-.hero-img-size {
-    max-width: 350px !important; /* Ajustá este valor a tu gusto */
-    margin: 0 auto;
-    display: block;
-}
-
-/* Control del logo del menú */
-.nav-logo {
-    height: 50px;
-    width: auto;
-}
-// Control específico para la imagen enorme del index
-.hero-img-size {
-    max-width: 400px !important; // Esto le pone un límite de tamaño
-    height: auto !important;     // Mantiene la proporción para que no se estire
-    display: block;
-    margin: 0 auto;              // La centra
-}
-
-// Por seguridad, una regla general para que ninguna imagen se desborde
-img {
-    max-width: 100%;
-    height: auto;
 }
