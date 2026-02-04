@@ -41,11 +41,12 @@ img:hover {
 
 header {
   border-bottom: 2px solid #f0f0f0;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 header .nav-logo {
-  height: 45px;
-  animation: none;
+  height: 45px !important;
+  width: auto;
+  display: block;
 }
 
 .main-footer {

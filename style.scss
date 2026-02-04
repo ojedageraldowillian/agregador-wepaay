@@ -62,8 +62,13 @@ img {
 // 6. HEADER
 header {
     border-bottom: 2px solid #f0f0f0;
-    padding: 15px 0;
-    .nav-logo { height: 45px; animation: none; }
+    padding: 10px 0; // Bajamos un poco el padding para que no sea tan alto
+
+    .nav-logo { 
+        height: 45px !important; // El !important asegura que gane sobre cualquier otra regla
+        width: auto;
+        display: block;
+    }
 }
 
 // 7. FOOTER MODERNO Y DEFINITIVO
