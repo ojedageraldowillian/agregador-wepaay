@@ -1,70 +1,101 @@
 // 1. VARIABLES
 $azul-bbva: #004481;
 $celeste-openpay: #00a9e0;
+$gris-oscuro: #333333; // Color moderno para textos
+$gris-suave: #666666; // Para textos secundarios (lead)
 $blanco: #ffffff;
 
-// 2. REGLA MAESTRA (Evita que las imágenes se descontrolen)
-img {
-    max-width: 100%;
-    height: auto;
+// 2. MIXINS (Para cumplir con la consigna)
+@mixin flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-// 3. EL FRENO PARA EL LOGO (Esto evita que se vea gigante)
+// 3. ESTILOS BASE
+body {
+    color: $gris-oscuro;
+    font-family: 'Arial', sans-serif; // O la que estés usando
+}
+
+// 4. EL "FRENO" PARA EL LOGO GIGANTE
 .hero-img-size {
-    max-width: 300px !important; 
-    width: 100%;
+    max-width: 350px !important; // Tamaño ideal para desktop
+    height: auto;
     display: block;
     margin: 0 auto;
 }
 
-// 4. HEADER Y NAV
-.nav-logo {
-    height: 45px;
-    width: auto;
+// 5. ENCABEZADOS MODERNOS
+h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: $azul-bbva; // El título principal en azul resalta la marca
+    margin-bottom: 1.5rem;
 }
 
+h2 {
+    font-size: 2rem;
+    color: $gris-oscuro;
+    margin-bottom: 2rem;
+}
+
+.lead {
+    color: $gris-suave;
+    font-size: 1.25rem;
+}
+
+// 6. HEADER
 header {
-    border-bottom: 3px solid $azul-bbva;
+    border-bottom: 2px solid #eeeeee;
+    padding: 10px 0;
+    .nav-logo {
+        height: 40px;
+        width: auto;
+    }
 }
 
-// 5. FOOTER ESTABLE
+// 7. FOOTER (Contraste profesional)
 .main-footer {
     background-color: $azul-bbva;
     color: $blanco;
-    padding: 40px 0;
-    margin-top: 50px;
+    padding: 60px 0 20px;
+    margin-top: 80px;
 
     .footer-h {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 15px;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
         color: $celeste-openpay;
+        margin-bottom: 20px;
     }
 
-    .footer-nav {
-        list-style: none;
-        padding: 0;
-        li a {
-            color: $blanco;
-            text-decoration: none;
-            &:hover { text-decoration: underline; }
-        }
+    .footer-nav a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: color 0.3s;
+        &:hover { color: $blanco; }
     }
 }
 
-// 6. MÓVIL SEGURO
+// 8. OPTIMIZACIÓN PARA MÓVIL
 @media (max-width: 768px) {
     .hero {
-        text-align: center !important;
-        padding: 40px 20px;
-        
-        .hero-img-size {
-            max-width: 250px !important; // Más chico en celular
-            margin-top: 20px !important;
-        }
+        @include flex-center;
+        padding: 40px 15px;
 
         h1 {
-            font-size: 1.8rem !important;
+            font-size: 2rem !important; // Achicamos el título en móvil
         }
+
+        .hero-img-size {
+            max-width: 280px !important; // Más pequeño en celulares
+        }
+    }
+
+    #productos {
+        padding: 40px 0;
+        h2 { font-size: 1.6rem; }
     }
 }
