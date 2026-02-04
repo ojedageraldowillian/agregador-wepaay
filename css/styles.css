@@ -19,4 +19,49 @@ header {
   border-bottom: 3px solid #004481;
 }
 
+.main-footer {
+  background-color: #004481;
+  color: #ffffff;
+  padding: 40px 0;
+  margin-top: 50px;
+}
+.main-footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+.main-footer .footer-h {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #00a9e0;
+}
+.main-footer .footer-nav {
+  list-style: none;
+  padding: 0;
+}
+.main-footer .footer-nav li {
+  margin-bottom: 10px;
+}
+.main-footer .footer-nav li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.main-footer .footer-nav li a:hover {
+  text-decoration: underline;
+}
+.main-footer .social-box a {
+  color: #ffffff;
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 /*# sourceMappingURL=styles.css.map */

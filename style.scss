@@ -1,27 +1,79 @@
-// VARIABLES
 $azul-bbva: #004481;
+$celeste-openpay: #00a9e0;
+$blanco: #ffffff;
 
-// 1. REGLA MAESTRA PARA IMÁGENES
+// 2. REGLA MAESTRA PARA IMÁGENES
 img {
     max-width: 100%;
     height: auto;
 }
 
-// 2. EL "FRENO" PARA EL LOGO GIGANTE DEL INDEX
+// 3. EL "FRENO" PARA EL LOGO GIGANTE DEL INDEX
 .hero-img-size {
-    max-width: 300px !important; // Esto achica la imagen gigante
+    max-width: 300px !important; 
     width: 100%;
     display: block;
     margin: 0 auto;
 }
 
-// 3. LOGO DEL MENÚ
+// 4. LOGO DEL MENÚ
 .nav-logo {
     height: 45px;
     width: auto;
 }
 
-// 4. HEADER
+// 5. HEADER
 header {
     border-bottom: 3px solid $azul-bbva;
+}
+
+// 6. FORMATO PARA EL FOOTER (Nosotros, Ayuda, Contacto)
+.main-footer {
+    background-color: $azul-bbva;
+    color: $blanco;
+    padding: 40px 0;
+    margin-top: 50px;
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+
+    .footer-h {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: $celeste-openpay; // Ahora sí funcionará
+    }
+
+    .footer-nav {
+        list-style: none;
+        padding: 0;
+        
+        li {
+            margin-bottom: 10px;
+            a {
+                color: $blanco;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .social-box a {
+        color: $blanco;
+        margin-right: 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+.footer-legal {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 0.8rem;
+    text-align: center;
 }
