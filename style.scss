@@ -1,8 +1,8 @@
-// 1. VARIABLES (Identidad Visual)
+// 1. VARIABLES
 $azul-bbva: #004481;
 $celeste-openpay: #00a9e0;
-$gris-oscuro: #333333; // Texto principal moderno
-$gris-suave: #666666;  // Textos secundarios
+$gris-oscuro: #333333; 
+$gris-suave: #666666; 
 $blanco: #ffffff;
 
 // 2. MIXINS
@@ -13,7 +13,7 @@ $blanco: #ffffff;
     text-align: center;
 }
 
-// 3. KEYFRAMES (Animaciones)
+// 3. ANIMACIÓN
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -25,103 +25,63 @@ $blanco: #ffffff;
     }
 }
 
-// 4. ESTILOS BASE Y TEXTOS
+// 4. ESTILOS GENERALES
 body {
     color: $gris-oscuro;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
 }
 
 h1 {
     font-size: 3rem;
     font-weight: 800;
     color: $azul-bbva;
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 1s ease-out; // El título también anima al entrar
+    animation: fadeInUp 1s ease-out;
 }
 
-h2 {
-    font-size: 2.2rem;
-    color: $gris-oscuro;
-    margin-bottom: 2rem;
-}
-
-.lead {
-    color: $gris-suave;
-    font-size: 1.25rem;
-    animation: fadeInUp 1.2s ease-out;
-}
-
-// 5. IMÁGENES CON ANIMACIÓN Y TAMAÑO
+// 5. IMÁGENES (Grandes y Animadas)
 img {
     max-width: 100%;
     height: auto;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    animation: fadeInUp 1.4s ease-out; // Entrada suave
+    transition: all 0.4s ease;
+    animation: fadeInUp 1.2s ease-out;
     
     &:hover {
-        transform: translateY(-12px) scale(1.05); // Efecto de flotar y agrandar
-        filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); // Sombra elegante
+        transform: translateY(-12px) scale(1.05);
+        filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
     }
 }
 
-// Logo/Imagen principal más grande
 .hero-img-size {
-    max-width: 500px !important; 
+    max-width: 500px !important; // Tamaño grande solicitado
     width: 100%;
     display: block;
     margin: 30px auto;
 }
 
-// 6. HEADER
+// 6. HEADER Y FOOTER
 header {
     border-bottom: 2px solid #f0f0f0;
     padding: 15px 0;
-    .nav-logo {
-        height: 45px;
-        width: auto;
-        animation: none; // El logo del nav no necesita animar siempre
-    }
+    .nav-logo { height: 45px; animation: none; }
 }
 
-// 7. FOOTER PROFESIONAL
 .main-footer {
     background-color: $azul-bbva;
     color: $blanco;
-    padding: 60px 0 30px;
+    padding: 60px 0;
     margin-top: 80px;
-
-    .footer-h {
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: $celeste-openpay;
-        margin-bottom: 20px;
-    }
-
-    .footer-nav a {
-        color: rgba(255,255,255,0.8);
-        text-decoration: none;
-        transition: color 0.3s;
-        &:hover { color: $blanco; }
-    }
+    .footer-h { color: $celeste-openpay; }
+    .footer-nav a { color: rgba(255,255,255,0.8); text-decoration: none; }
 }
 
-// 8. RESPONSIVE (Móvil)
+// 7. RESPONSIVE (Móvil)
 @media (max-width: 768px) {
     .hero {
         @include flex-center;
         padding: 50px 20px;
-
-        h1 {
-            font-size: 2.2rem !important;
-        }
-
-        .hero-img-size {
-            max-width: 380px !important; // Tamaño grande pero adaptado a móvil
-        }
+        h1 { font-size: 2.2rem !important; }
+        .hero-img-size { max-width: 380px !important; }
     }
-
     #productos {
         padding: 40px 0;
         h2 { font-size: 1.8rem; }
