@@ -1,47 +1,98 @@
-@keyframes aparecer {
+@keyframes floatIn {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-* {
-  color: #004481 !important;
-}
-
-footer, .main-footer, .footer-h, .footer-nav a, .social-box a {
-  background-color: #004481 !important;
-  color: #ffffff !important;
-}
-
 img {
   max-width: 100%;
   height: auto;
-  transition: transform 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: floatIn 1.2s ease-out;
 }
 img:hover {
-  transform: scale(1.1);
+  transform: translateY(-10px) scale(1.03);
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
 }
 
-.hero {
-  animation: aparecer 1.5s ease-out;
+.hero-img-size {
+  max-width: 350px !important;
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #004481;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333333;
+  margin-bottom: 2rem;
+}
+
+.lead {
+  color: #666666;
+  font-size: 1.25rem;
+}
+
+header {
+  border-bottom: 2px solid #eeeeee;
+  padding: 10px 0;
+}
+header .nav-logo {
+  height: 40px;
+  width: auto;
+}
+
+.main-footer {
+  background-color: #004481;
+  color: #ffffff;
+  padding: 60px 0 20px;
+  margin-top: 80px;
+}
+.main-footer .footer-h {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #00a9e0;
+  margin-bottom: 20px;
+}
+.main-footer .footer-nav a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.main-footer .footer-nav a:hover {
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
-  .hero, .hero-content {
+  .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 40px 10px;
+    padding: 40px 15px;
   }
-  .hero-img-size {
+  .hero h1 {
+    font-size: 2rem !important;
+  }
+  .hero .hero-img-size {
     max-width: 280px !important;
-    margin: 20px auto !important;
+  }
+  #productos {
+    padding: 40px 0;
+  }
+  #productos h2 {
+    font-size: 1.6rem;
   }
 }
 
