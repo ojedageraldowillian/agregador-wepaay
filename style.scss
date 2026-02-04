@@ -82,3 +82,21 @@ header {
         }
     }
 }
+/* Regla general para que nada se desborde */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Control del logo central del index */
+.hero-img-size {
+    max-width: 350px !important; /* Ajustá este valor a tu gusto */
+    margin: 0 auto;
+    display: block;
+}
+
+/* Control del logo del menú */
+.nav-logo {
+    height: 50px;
+    width: auto;
+}
