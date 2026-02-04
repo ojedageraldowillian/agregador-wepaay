@@ -100,3 +100,16 @@ img {
     height: 50px;
     width: auto;
 }
+// Control específico para la imagen enorme del index
+.hero-img-size {
+    max-width: 400px !important; // Esto le pone un límite de tamaño
+    height: auto !important;     // Mantiene la proporción para que no se estire
+    display: block;
+    margin: 0 auto;              // La centra
+}
+
+// Por seguridad, una regla general para que ninguna imagen se desborde
+img {
+    max-width: 100%;
+    height: auto;
+}
