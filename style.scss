@@ -3,31 +3,39 @@ $azul-bbva: #004481;
 $celeste-openpay: #00a9e0;
 $blanco: #ffffff;
 
-// 2. MIXINS (Esto te lo pide la consigna - Ejemplo: para centrar flex)
+// 2. MIXINS
 @mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-// 3. ANIMACIÓN (Esto también lo pide la consigna)
+// 3. ANIMACIÓN
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(50px) scale(0.9); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
 }
 
 // 4. ESTILOS GENERALES
 img {
     max-width: 100%;
     height: auto;
-    transition: transform 0.3s ease; // Transición suave
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    
     &:hover {
-        transform: scale(1.02); // Efecto visual al pasar el mouse
+        transform: scale(1.1); 
+        filter: brightness(1.1);
     }
 }
 
 .hero {
-    animation: fadeIn 1s ease-out; // Aplicamos la animación al inicio
+    animation: fadeIn 1.5s ease-out; // Mantenemos solo la versión de 1.5s
 }
 
 .hero-img-size {
@@ -36,7 +44,7 @@ img {
     margin: 0 auto;
 }
 
-// 5. FOOTER (Usando el Mixin y Nesting avanzado)
+// 5. FOOTER
 .main-footer {
     background-color: $azul-bbva;
     color: $blanco;
@@ -48,17 +56,17 @@ img {
     }
 
     .social-box {
-        @include flex-center; // Usamos el Mixin aquí
+        @include flex-center; 
         gap: 20px;
     }
 }
 
-// 6. RESPONSIVE (Media Queries prolijas)
+// 6. RESPONSIVE
 @media (max-width: 768px) {
     .hero {
         text-align: center !important;
         .hero-content {
-            @include flex-center; // Reutilizamos el Mixin
+            @include flex-center; 
             flex-direction: column;
         }
     }
