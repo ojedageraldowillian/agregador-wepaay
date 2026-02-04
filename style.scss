@@ -1,11 +1,11 @@
 // 1. VARIABLES
 $azul-bbva: #004481;
 $celeste-openpay: #00a9e0;
-$gris-oscuro: #333333; // Color moderno para textos
-$gris-suave: #666666; // Para textos secundarios (lead)
+$gris-oscuro: #333333; 
+$gris-suave: #666666; 
 $blanco: #ffffff;
 
-// 2. MIXINS (Para cumplir con la consigna)
+// 2. MIXINS
 @mixin flex-center {
     display: flex;
     flex-direction: column;
@@ -13,16 +13,33 @@ $blanco: #ffffff;
     text-align: center;
 }
 
-// 3. ESTILOS BASE
-body {
-    color: $gris-oscuro;
-    font-family: 'Arial', sans-serif; // O la que estés usando
+// 3. ANIMACIÓN DE ENTRADA
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-// 4. EL "FRENO" PARA EL LOGO GIGANTE
-.hero-img-size {
-    max-width: 350px !important; // Tamaño ideal para desktop
+// 4. ESTILOS DE IMÁGENES Y HOVER
+img {
+    max-width: 100%;
     height: auto;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: floatIn 1.2s ease-out;
+    
+    &:hover {
+        transform: translateY(-10px) scale(1.03);
+        filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    }
+}
+
+.hero-img-size {
+    max-width: 350px !important; 
     display: block;
     margin: 0 auto;
 }
@@ -31,7 +48,7 @@ body {
 h1 {
     font-size: 2.8rem;
     font-weight: 800;
-    color: $azul-bbva; // El título principal en azul resalta la marca
+    color: $azul-bbva;
     margin-bottom: 1.5rem;
 }
 
@@ -56,7 +73,7 @@ header {
     }
 }
 
-// 7. FOOTER (Contraste profesional)
+// 7. FOOTER
 .main-footer {
     background-color: $azul-bbva;
     color: $blanco;
@@ -86,11 +103,11 @@ header {
         padding: 40px 15px;
 
         h1 {
-            font-size: 2rem !important; // Achicamos el título en móvil
+            font-size: 2rem !important;
         }
 
         .hero-img-size {
-            max-width: 280px !important; // Más pequeño en celulares
+            max-width: 280px !important;
         }
     }
 
