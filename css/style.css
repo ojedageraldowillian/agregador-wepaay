@@ -11,34 +11,20 @@
 body {
   color: #333333;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
 }
 
 h1 {
   font-size: 3rem;
   font-weight: 800;
   color: #004481;
-  margin-bottom: 1.5rem;
   animation: fadeInUp 1s ease-out;
-}
-
-h2 {
-  font-size: 2.2rem;
-  color: #333333;
-  margin-bottom: 2rem;
-}
-
-.lead {
-  color: #666666;
-  font-size: 1.25rem;
-  animation: fadeInUp 1.2s ease-out;
 }
 
 img {
   max-width: 100%;
   height: auto;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  animation: fadeInUp 1.4s ease-out;
+  transition: all 0.4s ease;
+  animation: fadeInUp 1.2s ease-out;
 }
 img:hover {
   transform: translateY(-12px) scale(1.05);
@@ -58,30 +44,21 @@ header {
 }
 header .nav-logo {
   height: 45px;
-  width: auto;
   animation: none;
 }
 
 .main-footer {
   background-color: #004481;
   color: #ffffff;
-  padding: 60px 0 30px;
+  padding: 60px 0;
   margin-top: 80px;
 }
 .main-footer .footer-h {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   color: #00a9e0;
-  margin-bottom: 20px;
 }
 .main-footer .footer-nav a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  transition: color 0.3s;
-}
-.main-footer .footer-nav a:hover {
-  color: #ffffff;
 }
 
 @media (max-width: 768px) {
