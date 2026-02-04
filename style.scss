@@ -3,88 +3,63 @@ $azul-bbva: #004481;
 $celeste-openpay: #00a9e0;
 $blanco: #ffffff;
 
-// 2. REGLAS GENERALES
+// 2. MIXINS (Esto te lo pide la consigna - Ejemplo: para centrar flex)
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 3. ANIMACIÓN (Esto también lo pide la consigna)
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+// 4. ESTILOS GENERALES
 img {
     max-width: 100%;
     height: auto;
+    transition: transform 0.3s ease; // Transición suave
+    &:hover {
+        transform: scale(1.02); // Efecto visual al pasar el mouse
+    }
 }
 
-.nav-logo {
-    height: 45px;
-    width: auto;
+.hero {
+    animation: fadeIn 1s ease-out; // Aplicamos la animación al inicio
 }
 
-header {
-    border-bottom: 3px solid $azul-bbva;
-}
-
-// 3. LOGO CENTRAL (Versión escritorio)
 .hero-img-size {
-    max-width: 300px !important; 
+    max-width: 300px !important;
     display: block;
     margin: 0 auto;
 }
 
-// 4. FOOTER
+// 5. FOOTER (Usando el Mixin y Nesting avanzado)
 .main-footer {
     background-color: $azul-bbva;
     color: $blanco;
     padding: 40px 0;
-    margin-top: 50px;
-
-    .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
-    }
-
+    
     .footer-h {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 15px;
         color: $celeste-openpay;
+        font-weight: bold;
     }
 
-    .footer-nav {
-        list-style: none;
-        padding: 0;
-        li a {
-            color: $blanco;
-            text-decoration: none;
-        }
+    .social-box {
+        @include flex-center; // Usamos el Mixin aquí
+        gap: 20px;
     }
 }
 
-// 5. --- EL ARREGLO PARA MÓVIL (FUERZA BRUTA) ---
+// 6. RESPONSIVE (Media Queries prolijas)
 @media (max-width: 768px) {
     .hero {
-        text-align: center !important; // Centra el texto
-        padding: 50px 20px !important;
-
-        .hero-content {
-            text-align: center !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important; // Centra el botón
-        }
-
-        h1 {
-            font-size: 1.8rem !important;
-            text-align: center !important;
-        }
-
-        .hero-img-size {
-            max-width: 250px !important;
-            margin: 40px auto 0 auto !important; // Separa el logo del texto
-        }
-    }
-
-    .main-footer {
         text-align: center !important;
-        .footer-grid {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
+        .hero-content {
+            @include flex-center; // Reutilizamos el Mixin
+            flex-direction: column;
         }
     }
 }
