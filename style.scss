@@ -1,42 +1,55 @@
-$color-primario: #004481;    // Azul BBVA clásico
-$color-secundario: #043263;  // Azul oscuro institucional
-$color-acento: #00a9e0;      // Celeste Openpay / BBVA
+// 1. VARIABLES (Identidad BBVA/Openpay)
+$color-primario: #004481;   // Azul BBVA
+$color-celeste: #00a9e0;    // Celeste Openpay
 $color-blanco: #ffffff;
-$color-fondo: #f4f4f4;
-$color-texto: #333333;
 
-// Fuentes y Medidas
-$fuente-principal: 'Benton Sans', Arial, sans-serif;
-$header-height: 80px; // Esto asegura que todos los headers midan lo mismo
-// Estilos para corregir la proporción
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    height: $header-height; // Usamos la variable de 80px que ya creaste
-
-    .navbar-brand img {
-        max-height: 100%; // Evita que el logo sea gigante
-        width: auto;
-        display: block;
-    }
+// 2. ESTILOS GENERALES
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// Contenedor principal para centrar el contenido
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - #{$header-height});
-    text-align: center;
-}
-
-// Estilo para el logo central (el que se ve gigante en tu captura)
-.hero-logo {
-    max-width: 400px; // Ajusta este valor para que no ocupe toda la pantalla
-    width: 90%;
+// 3. CORRECCIÓN DE IMÁGENES (Esto arregla la desproporción)
+img {
+    max-width: 100%;
     height: auto;
-    margin-bottom: 2rem;
+}
+
+// Achicamos el logo del Menú
+.nav-logo {
+    height: 40px; 
+    width: auto;
+}
+
+// Achicamos el logo gigante del Hero (el de la línea 46)
+.hero-img-size {
+    max-width: 350px !important; // Esto evita que ocupe toda la pantalla
+    height: auto;
+}
+
+// Achicamos las imágenes de los productos (SmartPos, Link, etc)
+.img-product {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+// 4. HEADER (Colores institucionales)
+header {
+    background-color: $color-blanco;
+    border-bottom: 3px solid $color-primario;
+    
+    .text-primary-wepaay {
+        color: $color-primario !important;
+    }
+    
+    .btn-ingresar {
+        background-color: $color-primario;
+        border: none;
+        &:hover {
+            background-color: $color-celeste;
+        }
+    }
 }
