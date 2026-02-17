@@ -1,0 +1,123 @@
+// HEADER
+header {
+    background-color: #ffffff;
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+
+    .navbar {
+        padding: 0;
+        .nav-logo { 
+            height: 40px !important; 
+            width: auto;
+        }
+    }
+}
+
+// SECCIÓN AZUL (Crea tu cuenta ahora)
+.bg-primary-wepaay {
+    background-color: #004481 !important; // Fondo Azul Oscuro
+    color: #ffffff !important; // Texto Blanco
+    padding: 60px 0;
+
+    h2, p {
+        color: #ffffff !important; // Fuerza el blanco en títulos y párrafos
+    }
+
+    .btn-light {
+        background-color: #ffffff !important;
+        color: #004481 !important; // Letras azules para que resalten en el botón blanco
+        font-weight: 700;
+        border: none;
+        padding: 12px 30px;
+        
+        &:hover {
+            background-color: #f0f0f0 !important;
+        }
+    }
+}
+
+// FOOTER
+.main-footer {
+    background-color: #004481;
+    color: #ffffff;
+    padding: 40px 0;
+    
+    .footer-brand-name {
+        color: #ffffff;
+    }
+    
+    a {
+        color: rgba(255, 255, 255, 0.8);
+        &:hover {
+            color: #ffffff;
+        }
+    }
+}
+
+// Clase genérica para textos azules
+.text-primary-wepaay {
+    color: #004481 !important;
+}
+// scss/_layout.scss
+
+.main-footer {
+    background-color: #004481; // Azul institucional
+    color: #ffffff;
+    padding: 60px 0 30px;
+    font-family: 'Roboto', sans-serif;
+
+    .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .footer-section {
+        flex: 1;
+        min-width: 200px; // Evita que se amontonen en pantallas chicas
+
+        .footer-brand-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .footer-tagline {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .footer-h {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+
+    .footer-nav {
+        list-style: none;
+        padding: 0;
+        li {
+            margin-bottom: 10px;
+            a {
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+                transition: color 0.3s;
+                &:hover {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    .footer-legal {
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 0.8rem;
+        opacity: 0.6;
+    }
+}

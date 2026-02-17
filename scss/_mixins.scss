@@ -1,0 +1,23 @@
+// _mixins.scss
+@mixin flex-custom($direction: row, $justify: center, $align: center, $text: left) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    text-align: $text;
+}
+
+@mixin hover-lift($y: -12px, $scale: 1.05) {
+    transform: translateY($y) scale($scale);
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
+}
+
+@mixin transition-std($prop: all, $time: 0.3s, $ease: ease) {
+    transition: $prop $time $ease;
+}
+
+@mixin tablet {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
