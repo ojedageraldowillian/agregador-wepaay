@@ -26,6 +26,12 @@ img {
   height: auto;
 }
 
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  font-smoothing: antialiased;
+}
+
 header {
   background-color: #ffffff;
   padding: 10px 0;
